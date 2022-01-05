@@ -16,7 +16,24 @@ const logoutButton = document.querySelector('#logout');
 const deleteButton = document.querySelector('.delete-button');
 
 todoForm.addEventListener('submit', async(e) => {
+    e.preventDefault();
     // on submit, create a todo, reset the form, and display the todos
+    const p = document.createElement('p');
+    const data = new FormData(todoForm);
+    const todo = data.get('todo');
+     
+    await createTodo(todo);
+    todoForm.reset();
+
+    p.append(todo);
+
+    todosEl.append(p);
+
+    
+
+  
+    
+
 });
 
 async function displayTodos() {
