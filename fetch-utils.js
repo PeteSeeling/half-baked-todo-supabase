@@ -8,7 +8,8 @@ export async function createTodo(todo){
     const response = await client
         .from('todos')
         .insert([{
-            todo:todo }
+            todo:todo,
+            complete:false }
         ]);
    
 
@@ -34,12 +35,13 @@ export async function getTodos() {
    
 }
 
-export async function completeTodo(aid) {
+export async function completeTodo(id) {
     // find the and update (set complete to true), the todo that matches the correct id
     const response = await client
         .from('todos')
         .insert({ complete: true })
-        .match({ id: aid });
+        .match({ id: id })
+        .single();
     
 
     return checkError(response);    

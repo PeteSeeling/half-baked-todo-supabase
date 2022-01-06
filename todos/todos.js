@@ -37,7 +37,8 @@ async function displayTodos() {
     // fetch the todos
   
     const todos = await getTodos();
-    console.log(todos)
+    console.log(todos);
+    todosEl.textContent = '';
     // display the list of todos
     for (let todo of todos) {
         const todosListItemEl = renderTodo(todo);
