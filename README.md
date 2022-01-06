@@ -21,7 +21,7 @@ https://alchemycodelab.github.io/web-01-todo-supabase/
 | Events                                                                                |             |
 | :----------------------------------------------------------------------------------- | ----------: |
 | On the home page (`'/'`), Login and Signup using the login and signup form. On success, redirect to the `/todos` page   |        .5 |
-| Logout by clicking the logout button                                                       |       .5 |
+<!-- | Logout by clicking the logout button                                                       |       .5 | -->
 | If a non-logged-in user tries to visit the todos page, redirect them to the login page     |       .5 |
 | On the todos page load, fetch the todos from supabase and render them to the page. Call your displayTodos() function to do this work.        |        1 |
 | Add a todo to supabase by using the input and button.                                     |        1 |
@@ -36,3 +36,6 @@ https://alchemycodelab.github.io/web-01-todo-supabase/
 | ASYNC: `deleteAllTodos()` : delete all todos  in supabasefor the logged-in user |.5|
 | ASYNC: `getTodos()` : get all todos in supabase for the logged-in user |.5|
 | ASYNC: `completeTodo(id)` : complete this todos in supabase for the logged-in user |1|
+
+
+
