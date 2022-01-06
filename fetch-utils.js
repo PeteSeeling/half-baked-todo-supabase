@@ -7,30 +7,40 @@ export async function createTodo(todo){
     // create a single incomplete todo with the correct 'todo' property for this user in supabase
     const response = await client
         .from('todos')
-        .insert([
-            {
-                todo: todo,
-            }
+        .insert([{
+            todo:todo }
         ]);
-
+   
 
     return checkError(response);
 }
 
 export async function deleteAllTodos() {
     // delete all todos for this user in supabase
-
+    const response = await client
+        .from('todos')
+        .delete('todo');
+      
     return checkError(response);
 }
 
 export async function getTodos() {
     // get all todos for this user from supabase
-
-    return checkError(response);    
+    const response = await client
+        .from('todos')
+        .select('todo');
+      
+    return checkError(response);  
+   
 }
 
-export async function completeTodo(id) {
+export async function completeTodo(aid) {
     // find the and update (set complete to true), the todo that matches the correct id
+    const response = await client
+        .from('todos')
+        .insert({ complete: true })
+        .match({ id: aid });
+    
 
     return checkError(response);    
 }
