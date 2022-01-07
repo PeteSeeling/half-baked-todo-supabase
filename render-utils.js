@@ -12,10 +12,10 @@ export function renderTodo(todo) {
     
     div.classList.add('todo');
 
-    p.textContent = todo.todo;
-    // p.append(todo);
+    p.textContent = `${todo.todo}`;
+
     div.append(p);
-    
+  
     return div;
    
 }

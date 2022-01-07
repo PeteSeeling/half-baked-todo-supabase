@@ -8,10 +8,12 @@ export async function createTodo(todo){
     const response = await client
         .from('todos')
         .insert([{
-            todo:todo,
-            complete:false }
-        ]);
-   
+            todo: todo,
+            complete: false,
+        }])
+        .single();
+       
+ 
 
     return checkError(response);
 }
@@ -29,7 +31,8 @@ export async function getTodos() {
     // get all todos for this user from supabase
     const response = await client
         .from('todos')
-        .select('todo');
+        .select();
+
       
     return checkError(response);  
    
@@ -39,10 +42,9 @@ export async function completeTodo(id) {
     // find the and update (set complete to true), the todo that matches the correct id
     const response = await client
         .from('todos')
-        .insert({ complete: true })
-        .match({ id: id })
-        .single();
-    
+        .update({ complete: true })
+        .match({ id: id });
+       
 
     return checkError(response);    
 }
