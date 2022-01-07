@@ -24,16 +24,10 @@ todoForm.addEventListener('submit', async(e) => {
     await createTodo(todo);
     await displayTodos();
     todoForm.reset();
-
-    
-
-   
-
 });
 
 async function displayTodos() {
     // fetch the todos
-  
     const todos = await getTodos();
    
     todosEl.textContent = '';
@@ -43,19 +37,11 @@ async function displayTodos() {
 
         todosEl.append(todosListItemEl);
        
-
         todosListItemEl.addEventListener('click', async() =>{
             await completeTodo(todo.id);
            
             displayTodos();
-           
-           
         });
-       
-    
-    // be sure to give each todo an event listener
-       
-    // on click, complete that todo
     }
 
 // add an on load listener that fetches and displays todos on load

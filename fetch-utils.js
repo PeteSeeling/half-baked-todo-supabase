@@ -13,8 +13,6 @@ export async function createTodo(todo){
         }])
         .single();
        
- 
-
     return checkError(response);
 }
 
@@ -44,12 +42,9 @@ export async function completeTodo(id) {
         .from('todos')
         .update({ complete: true })
         .match({ id: id });
-       
-
+    
     return checkError(response);    
 }
-
-
 
 export async function getUser() {
     return client.auth.session();

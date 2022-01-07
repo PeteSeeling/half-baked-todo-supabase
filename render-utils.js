@@ -15,7 +15,6 @@ export function renderTodo(todo) {
     p.textContent = `${todo.todo}`;
 
     div.append(p);
-  console.log(p)
+
     return div;
-   
 }
