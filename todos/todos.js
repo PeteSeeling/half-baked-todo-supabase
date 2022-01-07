@@ -19,7 +19,7 @@ const deleteButton = document.querySelector('.delete-button');
 window.addEventListener('load', async() =>{
     await displayTodos();
 });
-console.log(todo)
+
 
 todoForm.addEventListener('submit', async(e) => {
     e.preventDefault();
